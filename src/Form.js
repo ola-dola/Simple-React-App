@@ -21,8 +21,10 @@ class Form extends Component {
 	}
 
 	submitForm = () => {
-		this.props.handleSubmit(this.state);
-		this.setState(this.initialState);
+		if (this.state.name !== this.initialState.name) {
+			this.props.handleSubmit(this.state);
+			this.setState(this.initialState);
+		}
 	}
 
 	render() {
